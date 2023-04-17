@@ -113,19 +113,13 @@
 
         {# PANEL SHIPPING #}
         {% block product_panel_shipping %}
-          <div role="tabpanel" class="form-contenttab tab-pane" id="step4">
-                <div class="container-fluid">
-                  <div class="row">
-                    {{ include('@Product/ProductPage/Forms/form_shipping.html.twig', {
-                      'form' : form.step4,
-                      'asm_globally_activated': asm_globally_activated,
-                      'isNotVirtual': form.step1.type_product.vars.value != "2",
-                      'isChecked': form.step3.advanced_stock_management.vars.checked,
-                      'warehouses': warehouses
-                    }) }}
-                  </div>
-                </div>
-          </div>
+          {{ include('@Product/ProductPage/Forms/form_shipping.html.twig', {
+            'form' : form.step4,
+            'asm_globally_activated': asm_globally_activated,
+            'isNotVirtual': form.step1.type_product.vars.value != "2",
+            'isChecked': form.step3.advanced_stock_management.vars.checked,
+            'warehouses': warehouses
+          }) }}        
         {% endblock %}
 
         {# PANEL PRICING #}
